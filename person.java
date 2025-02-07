@@ -1,3 +1,4 @@
+//ANDERSON MAINA CT 101/G/20948/23
 import java.util.Scanner;
 public class person {
     string name:
