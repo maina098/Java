@@ -1,0 +1,72 @@
+//Anderson Maina
+//Ct 101/G/20948/23
+//This is a car system program that employs encapsulation
+
+import java.util.Scanner;
+
+class Car {
+    // initializing license plate with boolean to check if its rented
+    private String licensePlate;
+    private boolean isRented;
+
+    // Constructor  seting the license plate when the car is created
+    public Car(String licensePlate) {
+        this.licensePlate = licensePlate;
+        this.isRented = false; // By default, the car is not rented
+    }
+
+    //car renting  method using if condition to validate status
+    public void rentCar() {
+        if (!isRented) {
+            isRented = true;
+            System.out.println("Car with license plate: " + licensePlate + " has been rented!");
+        } else {
+            System.out.println("Car with license plate: " + licensePlate + " is already rented!");
+        }
+    }
+
+    // Return the car method using conditionals 
+    public void returnCar() {
+        if (isRented) {
+            isRented = false;
+            System.out.println("Car with license plate: " + licensePlate + " has been returned!");
+        } else {
+            System.out.println("Car with license plate: " + licensePlate + " was not rented!");
+        }
+    }
+
+    // Getter method to checks whether car is rented and license plate
+    public boolean isCarRented() {
+        return isRented;
+    }
+
+    
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+}
+
+public class carSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompting  user to enter the license plate
+        System.out.print("Enter the license plate of the car: ");
+        String licensePlate = scanner.nextLine();
+
+        // Creating  a new car object
+        Car car1 = new Car(licensePlate);
+
+        // Renting  the car
+        car1.rentCar();
+        
+        car1.rentCar();
+
+        // Returning  the car
+        car1.returnCar();
+        
+        car1.returnCar();
+        
+        scanner.close();
+    }
+}
