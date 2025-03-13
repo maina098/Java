@@ -1,0 +1,78 @@
+//Anderson Maina
+//Ct 101/g/20948/23
+//This is a bank system  Encapsulation java program
+
+import java.util.Scanner;
+
+
+class BankAccount {
+    
+  // initializing balance privately
+  private double balance;
+
+  
+  public BankAccount(double balance){
+    this.balance = balance;
+  }
+
+  // using Getter method that  retrieves  balance in your account
+  public double getBalance(){
+    return balance;
+  }
+  
+  // depositing an amount into the account using if conditional
+    
+  public void setdeposit(double amount){
+    if (amount > balance) 
+        
+    {
+      System.out.println("You have insufficient balance");
+    }
+    else
+        
+    {
+      balance += amount;
+    }
+  }
+
+  // withdrawing  an amount from the account
+    
+  public void setWithdraw(double amount){
+    balance -= amount;
+  }
+}
+
+
+// Main class
+public class bankSystemEncapsulation {
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    // Prompting  user to enter initial balance for security reasons 
+      
+    System.out.println("Enter balance");
+      
+    BankAccount account1 = new BankAccount(scanner.nextDouble()); 
+      
+    System.out.println("" + account1.getBalance());
+
+    // Prompting user to enter the desired  amount to deposit
+    System.out.println("Enter amount to deposit");
+      
+    account1.setdeposit(scanner.nextDouble());
+      
+    System.out.println(" Balance :" + account1.getBalance());
+
+    // Prompting  user to enter desireable  amount to withdraw
+    System.out.println("Enter amount to withdraw");
+      
+    account1.setWithdraw(scanner.nextDouble());
+      
+      
+    System.out.println(" Balance :" + account1.getBalance());
+      
+    // Closing  the scanner
+    scanner.close();
+  }
+}
